@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;600;900&family=Permanent+Marker&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Anton", ui-sans-serif, system-ui, sans-serif;
+  --font-graffiti: "Permanent Marker", cursive;
+  
+  --color-neon-pink: #ff007f;
+  --color-neon-yellow: #ccff00;
+  --color-neon-cyan: #00ffff;
+}
+
+body {
+  background-color: #f4f4f0;
+  color: #111;
+  overflow-x: hidden;
+}
+
+.graffiti-highlight {
+  position: relative;
+  display: inline-block;
+  z-index: 1;
+  white-space: nowrap;
+}
+.graffiti-highlight::before {
+  content: '';
+  position: absolute;
+  bottom: 10%;
+  left: -2%;
+  width: 104%;
+  height: 40%;
+  background-color: var(--color-neon-yellow);
+  z-index: -1;
+  transform: rotate(-2deg);
+  transition: transform 0.3s ease;
+}
+.graffiti-highlight:hover::before {
+  transform: rotate(0deg) scaleY(1.5);
+}
+
+.graffiti-highlight-pink {
+  position: relative;
+  display: inline-block;
+  z-index: 1;
+  white-space: nowrap;
+}
+.graffiti-highlight-pink::before {
+  content: '';
+  position: absolute;
+  bottom: 10%;
+  left: -2%;
+  width: 104%;
+  height: 40%;
+  background-color: var(--color-neon-pink);
+  z-index: -1;
+  transform: rotate(1deg);
+  transition: transform 0.3s ease;
+}
+.graffiti-highlight-pink:hover::before {
+  transform: rotate(0deg) scaleY(1.5);
+}
